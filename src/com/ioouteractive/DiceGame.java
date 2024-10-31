@@ -65,7 +65,11 @@ public class DiceGame {
             if (input.equalsIgnoreCase("q")) {
                 System.out.println("Game quit. Thanks for playing!");
                 break;
-                
+
+     } else if (input.equalsIgnoreCase("r")) {
+                int roll = rollDice();
+                processField(currentPlayer, roll);
+
     }
 
            public static void main(String[] args) {
