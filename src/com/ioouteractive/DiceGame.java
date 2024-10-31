@@ -25,6 +25,12 @@ public class DiceGame {
     private Random dice;
     private Scanner scanner;
 
+    public DiceGame(String player1Name, String player2Name) {
+        this.player1 = new Player(player1Name);
+        this.player2 = new Player(player2Name);
+        this.dice = new Random();
+        this.scanner = new Scanner(System.in); 
+        
     public static int DiceRolls(){
         Random random = new Random();
         int dieRoll1 = random.nextInt(6) + 1;
