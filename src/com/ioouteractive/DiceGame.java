@@ -69,6 +69,11 @@ public class DiceGame {
      } else if (input.equalsIgnoreCase("r")) {
                 int roll = rollDice();
                 processField(currentPlayer, roll);
+     if (currentPlayer.hasWon()) {
+                    System.out.println(currentPlayer.getName() + " wins with a balance of " + currentPlayer.getBalance() + "!");
+                    break;
+                }
+
 
     }
 
