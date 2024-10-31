@@ -44,6 +44,9 @@ public class DiceGame {
             System.out.println(player.subtractBalance(-effect));
         }
 
+        System.out.println(player.getName() + " rolled a " + field + ": " + fieldMessages[field - 2]);
+        System.out.println("New Balance: " + player.getBalance());
+
     }
 
     private static boolean CheckExtraRoll() {
