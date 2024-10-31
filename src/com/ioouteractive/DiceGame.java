@@ -17,3 +17,11 @@ public class DiceGame {
             "You fell into the big hollow Pit and 50 of your coins fell too.",
             "You've discovered the a huge Goldmine and found 650 coins! "
     };
+
+    public static int DiceRolls(){
+        Random random = new Random();
+        int dieRoll1 = random.nextInt(6) + 1;
+        int dieRoll2 = random.nextInt(6) + 1;
+
+        return dieRoll1 + dieRoll2;
+    }
