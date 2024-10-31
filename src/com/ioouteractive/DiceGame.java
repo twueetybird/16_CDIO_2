@@ -35,7 +35,14 @@ public class DiceGame {
     private int rollDice() {
         return dice.nextInt(bound:6) + 1 + dice.nextInt(bound:6) + 1;
     }
-        
+    
+      private void processField(Player player, int field) {
+        int effect = fieldEffects[field - 2];
+        if (effect > 0) {
+            System.out.println(player.addBalance(effect));
+        } else {
+            System.out.println(player.subtractBalance(-effect));
+        }
 
     }
 
