@@ -1,4 +1,5 @@
 package com.ioouteractive;
+import java.util.Random;
 
 public class DiceGame {
     private static final int[] fieldEffects = {0, 0, 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
@@ -24,5 +25,13 @@ public class DiceGame {
         int dieRoll2 = random.nextInt(6) + 1;
 
         return dieRoll1 + dieRoll2;
+    }
+
+    private static boolean CheckExtraRoll() {
+        if(DiceRolls() == 10) {
+            return true;
+        }
+
+        return false;
     }
 }
