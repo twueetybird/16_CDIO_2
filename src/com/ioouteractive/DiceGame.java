@@ -81,6 +81,8 @@ public class DiceGame {
             }
         }
 
+         scanner.close();
+
     }
 
            public static void main(String[] args) {
