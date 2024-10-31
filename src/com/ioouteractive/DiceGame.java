@@ -30,13 +30,13 @@ public class DiceGame {
         this.player2 = new Player(player2Name);
         this.dice = new Random();
         this.scanner = new Scanner(System.in); 
-        
-    public static int DiceRolls(){
-        Random random = new Random();
-        int dieRoll1 = random.nextInt(6) + 1;
-        int dieRoll2 = random.nextInt(6) + 1;
+    }
 
-        return dieRoll1 + dieRoll2;
+    private int rollDice() {
+        return dice.nextInt(bound:6) + 1 + dice.nextInt(bound:6) + 1;
+    }
+        
+
     }
 
     private static boolean CheckExtraRoll() {
@@ -45,21 +45,6 @@ public class DiceGame {
         }
 
         return false;
-    }
-     public static void main(String[] args) {
-        
-    System.out.println("Hello and welcome to Ding Dong Dice!");
-    System.out.println("Type any string to roll, type \"exit\" to exit game");
-
-    var s = new java.util.Scanner(System.in);
-    s.useLocale(java.util.Locale.ENGLISH);
-
-    while (s.hasNext()) {
-        String input = s.nextLine();
-        if (input.equalsIgnoreCase("exit")) {
-            System.out.println("Goodbye :(");
-            break;
-}
     }
 
            public static void main(String[] args) {
