@@ -73,6 +73,9 @@ public class DiceGame {
                     System.out.println(currentPlayer.getName() + " wins with a balance of " + currentPlayer.getBalance() + "!");
                     break;
                 }
+    if (!currentPlayer.hasExtraTurn()) {
+                    currentPlayer = (currentPlayer == player1) ? player2 : player1;
+                }
 
 
     }
