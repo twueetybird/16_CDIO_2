@@ -61,6 +61,18 @@ public class DiceGame {
             break;
 }
     }
+
+           public static void main(String[] args) {
+        System.out.println("Hello and welcome to Ding Dong Dice!");    
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Player 1's name: ");
+        String player1Name = scanner.nextLine();
+        System.out.print("Enter Player 2's name: ");
+        String player2Name = scanner.nextLine();
+
+        DiceGame game = new DiceGame(player1Name, player2Name);
+        game.playGame();
+        scanner.close();
     
 }
 }
