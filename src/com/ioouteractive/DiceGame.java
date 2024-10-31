@@ -34,4 +34,21 @@ public class DiceGame {
 
         return false;
     }
+     public static void main(String[] args) {
+        
+    System.out.println("Hello and welcome to Ding Dong Dice!");
+    System.out.println("Type any string to roll, type \"exit\" to exit game");
+
+    var s = new java.util.Scanner(System.in);
+    s.useLocale(java.util.Locale.ENGLISH);
+
+    while (s.hasNext()) {
+        String input = s.nextLine();
+        if (input.equalsIgnoreCase("exit")) {
+            System.out.println("Goodbye :(");
+            break;
+}
+    }
+    
+}
 }
