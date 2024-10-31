@@ -47,11 +47,13 @@ public class DiceGame {
         System.out.println(player.getName() + " rolled a " + field + ": " + fieldMessages[field - 2]);
         System.out.println("New Balance: " + player.getBalance());
 
+         if (field == 10) {
+            player.setExtraTurn(true);
+            System.out.println(player.getName() + " earns an extra turn due to The Werewall!");
+        } else {
+            player.setExtraTurn(false);
+        }
     }
-
-    private static boolean CheckExtraRoll() {
-        if(DiceRolls() == 10) {
-            return true;
         }
 
         return false;
