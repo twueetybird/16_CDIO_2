@@ -33,7 +33,7 @@ public class DiceGame {
     }
 
     private int rollDice() {
-        return dice.nextInt(bound:6) + 1 + dice.nextInt(bound:6) + 1;
+        return dice.nextInt(6) + 1 + dice.nextInt(6) + 1;
     }
     
       private void processField(Player player, int field) {
