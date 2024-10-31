@@ -25,3 +25,4 @@ public class DiceGame {
 
         return dieRoll1 + dieRoll2;
     }
+}
