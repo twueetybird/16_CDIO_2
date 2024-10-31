@@ -20,6 +20,11 @@ public class DiceGame {
             "You've discovered the a huge Goldmine and found 650 coins! "
     };
 
+    private Player player1;
+    private Player player2;
+    private Random dice;
+    private Scanner scanner;
+
     public static int DiceRolls(){
         Random random = new Random();
         int dieRoll1 = random.nextInt(6) + 1;
