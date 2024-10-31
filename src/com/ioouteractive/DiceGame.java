@@ -3,10 +3,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class DiceGame {
-    private static final int[] fieldEffects = {0, 0, 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
+    private static final int[] fieldEffects = {0, 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
     private static final String[] fieldMessages = {
             "", 
-            "",
             "You've climbed the Eiffel Tower and gained 250 coins!",
             "You fell into a Meteor Crater and lost 100 coins. Watch your step next time.",
             "You entered through the graceful Palace Gates and gained 100 coins!",
