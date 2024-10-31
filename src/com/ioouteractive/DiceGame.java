@@ -76,7 +76,10 @@ public class DiceGame {
     if (!currentPlayer.hasExtraTurn()) {
                     currentPlayer = (currentPlayer == player1) ? player2 : player1;
                 }
-
+  } else {
+                System.out.println("That's not a valid input! Please press 'r' to roll or 'q' to quit.");
+            }
+        }
 
     }
 
