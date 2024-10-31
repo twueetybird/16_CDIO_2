@@ -54,9 +54,18 @@ public class DiceGame {
             player.setExtraTurn(false);
         }
     }
-        }
+        
+ public void playGame() {
+        Player currentPlayer = player1;
+        while (true) {
+            System.out.println("\n" + currentPlayer.getName() + "'s turn.");
+            System.out.print("Press 'r' to roll the dice, or 'q' to quit: ");
+            String input = scanner.nextLine();
 
-        return false;
+            if (input.equalsIgnoreCase("q")) {
+                System.out.println("Game quit. Thanks for playing!");
+                break;
+                
     }
 
            public static void main(String[] args) {
