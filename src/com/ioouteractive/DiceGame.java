@@ -1,11 +1,12 @@
 package com.ioouteractive;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class DiceGame {
-    private static final int[] fieldEffects = {0, 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
+    private static final int[] fieldEffects = { 0, 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
     private static final String[] fieldMessages = {
-            "", 
+            "",
             "You've climbed the Eiffel Tower and gained 250 coins!",
             "You fell into a Meteor Crater and lost 100 coins. Watch your step next time.",
             "You entered through the graceful Palace Gates and gained 100 coins!",
@@ -25,17 +26,17 @@ public class DiceGame {
     private Scanner scanner;
 
     public DiceGame(String player1Name, String player2Name) {
-        this.player1 = new Player(player1Name);
-        this.player2 = new Player(player2Name);
+        this.player1 = GameManager.createPlayer(player1Name);
+        this.player2 = GameManager.createPlayer(player2Name);
         this.dice = new Random();
-        this.scanner = new Scanner(System.in); 
+        this.scanner = new Scanner(System.in);
     }
 
     private int rollDice() {
         return dice.nextInt(6) + 1 + dice.nextInt(6) + 1;
     }
-    
-      private void processField(Player player, int field) {
+
+    private void processField(Player player, int field) {
         int effect = fieldEffects[field - 2];
         if (effect > 0) {
             System.out.println(player.addBalance(effect));
@@ -46,15 +47,15 @@ public class DiceGame {
         System.out.println(player.getName() + " rolled a " + field + ": " + fieldMessages[field - 2]);
         System.out.println("New Balance: " + player.getBalance());
 
-         if (field == 10) {
+        if (field == 10) {
             player.setExtraTurn(true);
             System.out.println(player.getName() + " earns an extra turn due to The Werewall!");
         } else {
             player.setExtraTurn(false);
         }
     }
-        
- public void playGame() {
+
+    public void playGame() {
         Player currentPlayer = player1;
         while (true) {
             System.out.println("\n" + currentPlayer.getName() + "'s turn.");
@@ -62,30 +63,33 @@ public class DiceGame {
             String input = scanner.nextLine();
 
             if (input.equalsIgnoreCase("q")) {
+                GameManager.savePlayer(player1);
+                GameManager.savePlayer(player2);
                 System.out.println("Game quit. Thanks for playing!");
                 break;
 
-     } else if (input.equalsIgnoreCase("r")) {
+            } else if (input.equalsIgnoreCase("r")) {
                 int roll = rollDice();
                 processField(currentPlayer, roll);
-     if (currentPlayer.hasWon()) {
-                    System.out.println(currentPlayer.getName() + " wins with a balance of " + currentPlayer.getBalance() + "!");
+                if (currentPlayer.hasWon()) {
+                    System.out.println(
+                            currentPlayer.getName() + " wins with a balance of " + currentPlayer.getBalance() + "!");
                     break;
                 }
-    if (!currentPlayer.hasExtraTurn()) {
+                if (!currentPlayer.hasExtraTurn()) {
                     currentPlayer = (currentPlayer == player1) ? player2 : player1;
                 }
-  } else {
+            } else {
                 System.out.println("That's not a valid input! Please press 'r' to roll or 'q' to quit.");
             }
         }
 
-         scanner.close();
+        scanner.close();
 
     }
 
-           public static void main(String[] args) {
-        System.out.println("Hello and welcome to Ding Dong Dice!");    
+    public static void main(String[] args) {
+        System.out.println("Hello and welcome to Ding Dong Dice!");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Player 1's name: ");
         String player1Name = scanner.nextLine();
@@ -95,6 +99,6 @@ public class DiceGame {
         DiceGame game = new DiceGame(player1Name, player2Name);
         game.playGame();
         scanner.close();
-    
-}
+
+    }
 }

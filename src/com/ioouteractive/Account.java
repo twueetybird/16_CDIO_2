@@ -19,8 +19,9 @@ public class Account {
         return this.balance;
     }
 
-    public void deposit(int amount) {
+    public int deposit(int amount) { // Returns balance
         this.balance += amount;
+        return this.balance;
     }
 
     public int withdraw(int amount) { // Returns remaining balance. If balance goes below zero, it is set to zero

@@ -1,3 +1,5 @@
+package com.ioouteractive;
+
 public class Player {
     private String name; 
     private Account account; 
@@ -33,11 +35,11 @@ public class Player {
     }
 
     public String addBalance(int amount) {
-        return account.deposit(amount); 
+        return String.valueOf(account.deposit(amount)); 
     }
 
     public String subtractBalance(int amount) {
-        return account.withdraw(amount); 
+        return String.valueOf(account.withdraw(amount)); 
     }
 
     public Account getAccount() {
